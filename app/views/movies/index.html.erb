@@ -1,0 +1,7 @@
+<h1>Browse Movies</h1>
+<div>
+  <% @movies.each do |movie| %>
+    <div><%= movie.title %> (<%= movie.rating %>/10)</div>
+    <div><%= movie.overview %></div>
+  <% end %>
+</div>

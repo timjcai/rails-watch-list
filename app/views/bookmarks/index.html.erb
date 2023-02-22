@@ -1,0 +1,11 @@
+<% @list = List.find(params[:list_id]) %>
+<h1>showing all bookmarks for <%= @list.name %></h1>
+<% @bookmarks.each do |bookmark| %>
+  <% @movie = Movie.find(bookmark.movie_id) %>
+  <div> <%= link_to @movie.title %> (<%= @movie.rating %>/10) | <%= link_to "Delete", bookmark_path(bookmark),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+</p></div>
+<% end %>
+
+<br>
+<%= link_to "Back to #{@list.name}", list_path(@list.id)  %>
