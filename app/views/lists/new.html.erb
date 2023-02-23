@@ -1,9 +1,14 @@
-<h1> Create new List </h1>
+<div class="container mt-5 bg-secondary rounded-3 text-white">
+  <div class="d-flex flex-column justify-content-center align-content-center m-3">
+    <div class="d-flex justify-content-between mt-4">
+      <h2> Create new list </h2>
+      <%= link_to 'Back to list', lists_path, class:"btn btn-primary text-white" %>
+    </div>
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :name %>
+      <%= f.button :submit , class:"btn btn-success text-white"%>
+    <% end %>
 
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
-
-<br>
-<%= link_to 'Back to all lists', lists_path %>
+    <br>
+  </div>
+</div>

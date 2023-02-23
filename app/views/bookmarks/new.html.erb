@@ -1,10 +1,17 @@
-<h1> Create new Bookmark </h1>
+<div class="container mt-5 bg-secondary rounded-3">
+  <div class="d-flex flex-column text-white">
+    <div class="d-flex justify-content-between mt-3">
+      <h2> Create new Bookmark </h2>
+      <%= link_to 'Back to list', lists_path, class:"btn btn-primary text-white" %>
+    </div>
 
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.button :submit %>
-<% end %>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment %>
+      <%= f.association :movie %>
+      <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+      <%= f.button :submit , class:"btn btn-success text-white"%>
+    <% end %>
 
-<br>
-<%= link_to 'Back to list', lists_path %>
+    <br>
+  </div>
+</div>
